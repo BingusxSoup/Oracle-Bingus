@@ -1,4 +1,5 @@
 export type ThemeId =
+  | 'oracle-bingus'
   | 'claude-nous'
   | 'claude-nous-light'
   | 'matrix'
@@ -18,6 +19,12 @@ export const THEMES: Array<{
   description: string
   icon: string
 }> = [
+  {
+    id: 'oracle-bingus',
+    label: 'Oracle Bingus',
+    description: 'Terminal CRT — magenta, violet, cyan, neon green on deep void',
+    icon: '◉',
+  },
   {
     id: 'claude-nous',
     label: 'Nous',
@@ -93,12 +100,14 @@ export const THEMES: Array<{
 ]
 
 const STORAGE_KEY = 'claude-theme'
-const DEFAULT_THEME: ThemeId = 'claude-nous'
+const DEFAULT_THEME: ThemeId = 'oracle-bingus'
 const THEME_SET = new Set<ThemeId>(THEMES.map((theme) => theme.id))
-const LIGHT_THEME_MAP: Record<
+// Partial map: oracle-bingus is dark-only and has no light counterpart;
+// toggling to light mode while on oracle-bingus keeps the same theme.
+const LIGHT_THEME_MAP: Partial<Record<
   Exclude<ThemeId, `${string}-light`>,
   Extract<ThemeId, `${string}-light`>
-> = {
+>> = {
   'claude-nous': 'claude-nous-light',
   matrix: 'matrix-light',
   'claude-official': 'claude-official-light',
@@ -106,10 +115,10 @@ const LIGHT_THEME_MAP: Record<
   'claude-slate': 'claude-slate-light',
   'scifi': 'scifi-light',
 }
-const DARK_THEME_MAP: Record<
+const DARK_THEME_MAP: Partial<Record<
   Extract<ThemeId, `${string}-light`>,
   Exclude<ThemeId, `${string}-light`>
-> = {
+>> = {
   'claude-nous-light': 'claude-nous',
   'matrix-light': 'matrix',
   'claude-official-light': 'claude-official',
@@ -143,13 +152,13 @@ export function getThemeVariant(
 ): ThemeId {
   if (mode === 'light') {
     return isDarkTheme(theme)
-      ? LIGHT_THEME_MAP[theme as keyof typeof LIGHT_THEME_MAP]
+      ? (LIGHT_THEME_MAP[theme as keyof typeof LIGHT_THEME_MAP] ?? theme)
       : theme
   }
 
   return isDarkTheme(theme)
     ? theme
-    : DARK_THEME_MAP[theme as keyof typeof DARK_THEME_MAP]
+    : (DARK_THEME_MAP[theme as keyof typeof DARK_THEME_MAP] ?? theme)
 }
 
 export function getTheme(): ThemeId {

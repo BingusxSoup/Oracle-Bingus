@@ -1531,3 +1531,122 @@ code {
    Tailwind oklch values and .system dark mode overrides.
    ═══════════════════════════════════════════════════════════════════ */
 @import './scifi-theme.css';
+
+/* ════════════════════════════════════════════════════════════════════
+   Oracle Bingus — terminal CRT brand theme (v2.0-pixel)
+   Magenta / violet / cyan / terminal-green on deep void.
+   Dark-only; light mode falls back to this same palette.
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme='oracle-bingus'] {
+  /* Brand palette — direct access for components that want neons */
+  --color-void: #05051A;
+  --color-panel: #0B0B26;
+  --color-deep: #030312;
+  --color-magenta: #FF00FF;
+  --color-violet: #8A2BE2;
+  --color-cyan: #00FFFF;
+  --color-terminal-green: #39FF14;
+  --color-magenta-50: rgba(255, 0, 255, 0.5);
+  --color-violet-30: rgba(138, 43, 226, 0.3);
+  --color-terminal-15: rgba(57, 255, 20, 0.15);
+  --color-terminal-40: rgba(57, 255, 20, 0.4);
+
+  /* Workspace --theme-* contract */
+  --theme-bg: #05051A;
+  --theme-sidebar: #08081F;
+  --theme-panel: #0B0B26;
+  --theme-card: #0E0E24;
+  --theme-card2: #12122E;
+  --theme-border: rgba(138, 43, 226, 0.3);
+  --theme-border-subtle: rgba(57, 255, 20, 0.15);
+  --theme-text: #39FF14;
+  --theme-muted: rgba(57, 255, 20, 0.45);
+  --theme-shadow-1: 0 0 5px rgba(255, 0, 255, 0.2);
+  --theme-shadow-2: 0 0 10px rgba(255, 0, 255, 0.4);
+  --theme-shadow-3: 0 0 25px rgba(138, 43, 226, 0.8), 0 0 10px rgba(255, 0, 255, 0.5);
+  --theme-glass: rgba(5, 5, 26, 0.88);
+  --theme-focus: #FF00FF;
+  --theme-accent: #FF00FF;
+  --theme-accent-secondary: #8A2BE2;
+  --theme-accent-subtle: rgba(255, 0, 255, 0.13);
+  --theme-accent-border: rgba(255, 0, 255, 0.5);
+  --theme-active: #FF00FF;
+  --theme-link: #00FFFF;
+  --theme-success: #39FF14;
+  --theme-warning: #FFD700;
+  --theme-danger: #FF003C;
+  --theme-stripe: rgba(255, 0, 255, 0.055);
+  --theme-header-bg: #08081F;
+  --theme-header-border: rgba(255, 0, 255, 0.4);
+
+  --chat-user-bg: #1C1C3D;
+  --chat-user-border: rgba(255, 0, 255, 0.5);
+  --chat-user-foreground: #39FF14;
+  --chat-assistant-bg: #0B0B26;
+  --chat-assistant-border: rgba(138, 43, 226, 0.3);
+  --chat-assistant-foreground: #39FF14;
+
+  --composer-bg: #030312;
+  --composer-border: rgba(255, 0, 255, 0.4);
+  --composer-placeholder: rgba(57, 255, 20, 0.4);
+
+  --tool-card-bg: #0B0B26;
+  --tool-card-border: rgba(0, 255, 255, 0.3);
+  --tool-card-title: #39FF14;
+  --tool-card-muted: rgba(57, 255, 20, 0.55);
+
+  --code-bg: #030312;
+  --code-border: rgba(57, 255, 20, 0.18);
+  --theme-input: #08081F;
+
+  background: #05051A;
+  color: #39FF14;
+}
+
+[data-theme='oracle-bingus'] body,
+[data-theme='oracle-bingus'] #root {
+  background: #05051A;
+  color: #39FF14;
+  font-family: 'VT323', monospace;
+}
+
+/* CRT scanline overlay — only active when oracle-bingus is selected */
+[data-theme='oracle-bingus'] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+[data-theme='oracle-bingus'] ::selection {
+  background: #FF00FF;
+  color: #05051A;
+}
+
+@keyframes ob-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.ob-cursor::after {
+  content: '▮';
+  color: #39FF14;
+  animation: ob-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes ob-flicker {
+  0%, 96%, 100% { opacity: 1; }
+  97% { opacity: 0.6; }
+  98% { opacity: 1; }
+  99% { opacity: 0.7; }
+}
+
+.ob-flicker { animation: ob-flicker 6s infinite; }
