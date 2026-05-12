@@ -779,6 +779,17 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
+<details>
+<summary>🛸 <em>Bingus Alien Unit — BAU-01</em></summary>
+
+Recovered field schematic. Subject: <strong>Bingus</strong>. Class: <em>Felis Extraterrestris</em>. Status: <strong>active</strong>.
+
+<p align="center"><img src="./public/bingus-blueprint.png" alt="Bingus Alien Unit BAU-01 — recovered schematic" width="320" /></p>
+
+</details>
+
+---
+
 <div align="center">
   <sub>Built with ⚡ by <a href="https://github.com/outsourc-e">@outsourc-e</a> and the Bingus Labs community</sub>
 </div>
