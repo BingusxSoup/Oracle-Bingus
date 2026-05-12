@@ -1538,7 +1538,7 @@ export function ChatScreen({
           }
         : statusQuery.data && !statusQuery.data.ok
           ? {
-              message: statusQuery.data.error || 'Hermes Agent unavailable',
+              message: statusQuery.data.error || 'Oracle Bingus unavailable',
               status: statusQuery.data.status,
             }
           : null
@@ -1665,7 +1665,7 @@ export function ChatScreen({
       : historyError
         ? `Failed to load history. ${historyError}`
         : statusError
-          ? `Hermes Agent unavailable. ${statusError.message}`
+          ? `Oracle Bingus unavailable. ${statusError.message}`
           : null
     if (message) setError(message)
   }, [
@@ -2091,7 +2091,7 @@ export function ChatScreen({
 
   useEffect(() => {
     if (false) {
-      // Server connection checks removed — Hermes Agent uses direct API
+      // Server connection checks removed — Oracle Bingus uses direct API
       hasSeenDisconnectRef.current = true
       retriedQueuedMessageKeysRef.current.clear()
       return

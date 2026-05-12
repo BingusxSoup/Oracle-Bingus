@@ -52,7 +52,7 @@ export function getFeatureLabel(feature: EnhancedFeature | string): string {
 export function getUnavailableReason(
   feature: EnhancedFeature | string,
 ): string {
-  return `${getFeatureLabel(feature)} requires a Hermes gateway that exposes the extended APIs. Check that Hermes Agent is installed and running with \`hermes gateway run\`.`
+  return `${getFeatureLabel(feature)} requires a Hermes gateway that exposes the extended APIs. Check that Oracle Bingus is installed and running with \`hermes gateway run\`.`
 }
 
 export function createCapabilityUnavailablePayload(

@@ -938,14 +938,14 @@ function ChatSidebarComponent({
               >
                 <img
                   src="/claude-avatar.webp"
-                  alt="Hermes Agent"
+                  alt="Oracle Bingus"
                   className="size-6 rounded-lg"
                 />
                 <span
                   className="text-sm font-semibold tracking-tight"
                   style={{ color: 'var(--theme-text)' }}
                 >
-                  Hermes Workspace
+                  Bingus Labs
                 </span>
               </Link>
             </motion.div>

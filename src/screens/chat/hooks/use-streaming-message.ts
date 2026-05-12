@@ -431,7 +431,7 @@ export function useStreamingMessage(options: UseStreamingMessageOptions = {}) {
       const payload = data as Record<string, unknown>
 
       // [DEBUG TUI] Log every SSE event so we can see whether tool.* events arrive
-      // from Hermes Agent through Workspace. Toggle off by setting
+      // from Oracle Bingus through Workspace. Toggle off by setting
       // localStorage.removeItem('hermes:debug:sse')
       if (
         typeof window !== 'undefined' &&
@@ -759,7 +759,7 @@ export function useStreamingMessage(options: UseStreamingMessageOptions = {}) {
           ) {
             transitionToHandoff()
           } else {
-            markFailed('Hermes Agent connection closed')
+            markFailed('Oracle Bingus connection closed')
           }
           break
         }
@@ -900,8 +900,8 @@ export function useStreamingMessage(options: UseStreamingMessageOptions = {}) {
         markAccepted()
         schedulePostAcceptanceTimeout('accepted')
 
-        // HTTP 200 — message accepted by Hermes Agent. Clear optimistic "sending"
-        // status so the Retry timer never fires. Hermes Agent does NOT echo
+        // HTTP 200 — message accepted by Oracle Bingus. Clear optimistic "sending"
+        // status so the Retry timer never fires. Oracle Bingus does NOT echo
         // user messages via SSE, so this is the only confirmation we get.
         if (params.idempotencyKey && onMessageAccepted) {
           onMessageAccepted(

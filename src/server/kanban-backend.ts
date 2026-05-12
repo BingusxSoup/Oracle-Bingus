@@ -412,7 +412,7 @@ const claudeBackend: KanbanBackend = {
 
 // Hermes Dashboard kanban plugin backend (HTTP proxy).
 //
-// Used when the upstream Hermes Agent dashboard exposes the kanban plugin
+// Used when the upstream Oracle Bingus dashboard exposes the kanban plugin
 // (caps.kanban === true). Goes through HTTP rather than direct SQLite so
 // remote workspaces (Docker, VPS, separate machines) can use the same
 // kanban DB the agent is using. See kanban-dashboard-proxy.ts.

@@ -25,7 +25,7 @@ function classifyConnectionError(
   if (!normalizedError && !status) {
     return {
       title: 'Not connected',
-      description: "Hermes Workspace can't reach Hermes Agent.",
+      description: "Bingus Labs can't reach Oracle Bingus.",
       action: 'Check that Hermes is running, then try again.',
     }
   }
@@ -38,8 +38,8 @@ function classifyConnectionError(
   ) {
     return {
       title: 'Authentication required',
-      description: 'Hermes Agent rejected the connection token.',
-      action: 'Go to Settings -> Advanced -> Hermes Agent to update your token.',
+      description: 'Oracle Bingus rejected the connection token.',
+      action: 'Go to Settings -> Advanced -> Oracle Bingus to update your token.',
     }
   }
 
@@ -50,15 +50,15 @@ function classifyConnectionError(
   ) {
     return {
       title: 'Pairing required',
-      description: "This device isn't paired with Hermes Agent yet.",
-      action: 'Check Hermes Agent connection.',
+      description: "This device isn't paired with Oracle Bingus yet.",
+      action: 'Check Oracle Bingus connection.',
     }
   }
 
   if (lower.includes('econnrefused') && lower.includes('8642')) {
     return {
-      title: 'Hermes Agent gateway not running',
-      description: 'The Hermes Agent gateway is not running on port 8642.',
+      title: 'Oracle Bingus gateway not running',
+      description: 'The Oracle Bingus gateway is not running on port 8642.',
       action: 'Run the official Hermes installer, then start the gateway with: hermes gateway run',
     }
   }
@@ -71,8 +71,8 @@ function classifyConnectionError(
     lower.includes('timeout')
   ) {
     return {
-      title: 'Hermes Agent unreachable',
-      description: "Can't connect to Hermes Agent at the configured URL.",
+      title: 'Oracle Bingus unreachable',
+      description: "Can't connect to Oracle Bingus at the configured URL.",
       action: 'Make sure Hermes is running and the URL is correct.',
     }
   }
@@ -133,7 +133,7 @@ export function ConnectionStatusMessage({
         />
         <div className="flex-1 text-xs">
           <p className="font-medium">
-            {isChecking ? 'Connecting to Hermes Agent...' : errorInfo.title}
+            {isChecking ? 'Connecting to Oracle Bingus...' : errorInfo.title}
           </p>
           {!isChecking ? (
             <>

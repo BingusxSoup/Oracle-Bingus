@@ -154,9 +154,9 @@ function Header() {
   return (
     <header className="relative z-30 mx-auto mt-4 flex max-w-[1560px] items-center justify-between border-b border-[#d9b35f]/20 px-4 pb-4 sm:px-6 lg:px-8">
       <a href="/hermes-world" className="flex items-center gap-3">
-        <img src="/hermesworld-logo.svg" alt="HermesWorld" className="h-10 w-10 rounded-2xl shadow-[0_0_34px_rgba(34,211,238,.18)]" />
+        <img src="/hermesworld-logo.svg" alt="Bingus World" className="h-10 w-10 rounded-2xl shadow-[0_0_34px_rgba(34,211,238,.18)]" />
         <div>
-          <div className="font-serif text-lg font-bold tracking-[-0.03em] text-[#f8e4ac]">Hermes<span className="text-cyan-200">World</span></div>
+          <div className="font-serif text-lg font-bold tracking-[-0.03em] text-[#f8e4ac]">Bingus<span className="text-cyan-200">World</span></div>
           <div className="text-[9px] font-black uppercase tracking-[0.22em] text-[#bfb49a]/46">Persistent Agent RPG</div>
         </div>
       </a>
@@ -383,7 +383,7 @@ function FinalCta() {
       <div className="mx-auto max-w-[880px] rounded-[2rem] border border-[#d9b35f]/24 bg-[#05080e]/78 p-8 text-center shadow-[0_40px_140px_rgba(0,0,0,.52)] backdrop-blur-xl sm:p-12">
         <div className="text-[11px] font-black uppercase tracking-[0.24em] text-cyan-100/62">Enter the world</div>
         <h2 className="mt-3 font-serif text-4xl font-bold tracking-[-0.055em] text-[#fff6df] sm:text-6xl">Build with agents in a world, not a chat box.</h2>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#d7d0bd]/62">Enter HermesWorld and explore the first playable layer of Hermes Workspace: zones, quests, companions, sigils, and persistent agent progression.</p>
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#d7d0bd]/62">Enter HermesWorld and explore the first playable layer of Bingus Labs: zones, quests, companions, sigils, and persistent agent progression.</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="/playground" className="rounded-xl bg-[#f8e4ac] px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#11100b] transition hover:-translate-y-0.5 hover:bg-white">▶ Play Now</a>
           <a href={HERMES_DOCS_URL} {...externalLinkProps} className="rounded-xl border border-white/12 bg-white/[0.055] px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white/78 transition hover:bg-white/[0.1]">Read Docs</a>
@@ -399,8 +399,8 @@ function Footer() {
   return (
     <footer className="mx-auto flex max-w-[1560px] flex-col gap-4 border-t border-[#d9b35f]/14 px-4 py-8 text-xs text-[#d7d0bd]/42 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
       <div className="flex items-center gap-3">
-        <img src="/hermesworld-logo.svg" alt="HermesWorld" className="h-8 w-8 rounded-xl" />
-        <span className="font-serif text-base text-[#f8e4ac]">Hermes<span className="text-cyan-200">World</span></span>
+        <img src="/hermesworld-logo.svg" alt="Bingus World" className="h-8 w-8 rounded-xl" />
+        <span className="font-serif text-base text-[#f8e4ac]">Bingus<span className="text-cyan-200">World</span></span>
       </div>
       <div className="flex flex-wrap gap-4 uppercase tracking-[0.16em]">
         <a href={HERMES_REPO_URL} {...externalLinkProps} className="hover:text-[#f8e4ac]">GitHub</a>

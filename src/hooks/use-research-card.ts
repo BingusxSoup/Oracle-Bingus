@@ -1,4 +1,4 @@
-// Stub — research card is a legacy feature, not used in Hermes Workspace
+// Stub — research card is a legacy feature, not used in Bingus Labs
 
 export interface ResearchStep {
   id: string

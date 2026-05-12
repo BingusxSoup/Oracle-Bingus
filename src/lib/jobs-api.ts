@@ -1,5 +1,5 @@
 /**
- * Jobs API client — talks to Hermes Agent FastAPI /api/jobs endpoints.
+ * Jobs API client — talks to Oracle Bingus FastAPI /api/jobs endpoints.
  */
 
 const CLAUDE_API = '/api/claude-jobs'

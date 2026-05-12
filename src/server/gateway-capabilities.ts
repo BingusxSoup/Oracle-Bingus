@@ -137,7 +137,7 @@ export function getResolvedUrls(): {
 }
 
 export const CLAUDE_UPGRADE_INSTRUCTIONS =
-  'For full features, install Hermes Agent from source (`git clone https://github.com/NousResearch/hermes-agent && cd hermes-agent && pip install -e .`), then start the gateway on :8642 (`hermes gateway run`). For the extended APIs (Sessions, Skills, Config, Jobs) also start the dashboard on :9119 (`hermes dashboard`).'
+  'For full features, install Oracle Bingus from source (`git clone https://github.com/NousResearch/hermes-agent && cd hermes-agent && pip install -e .`), then start the gateway on :8642 (`hermes gateway run`). For the extended APIs (Sessions, Skills, Config, Jobs) also start the dashboard on :9119 (`hermes dashboard`).'
 
 export const SESSIONS_API_UNAVAILABLE_MESSAGE = `Your Hermes backend does not support the sessions API. ${CLAUDE_UPGRADE_INSTRUCTIONS}`
 
@@ -269,7 +269,7 @@ export const BEARER_TOKEN = process.env.HERMES_API_TOKEN || process.env.CLAUDE_A
  * When set, the workspace uses this directly and never parses HTML.
  *
  * NOTE: do NOT fall back to CLAUDE_API_TOKEN here. The gateway and the
- * upstream Hermes Agent dashboard use independent token schemes — the gateway
+ * upstream Oracle Bingus dashboard use independent token schemes — the gateway
  * accepts a long-lived bearer (CLAUDE_API_TOKEN), while the dashboard
  * issues an ephemeral session token at boot (web_server.py:_SESSION_TOKEN).
  * Treating them as interchangeable wedges the workspace into 401 loops on

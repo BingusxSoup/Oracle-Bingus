@@ -270,7 +270,7 @@ export function readWorkspaceUpdateStatus(
   if (installKind === 'desktop') {
     return {
       id: 'workspace',
-      label: 'Hermes Workspace',
+      label: 'Bingus Labs',
       installKind,
       version,
       path: repoPath,
@@ -290,7 +290,7 @@ export function readWorkspaceUpdateStatus(
   if (installKind === 'docker') {
     return {
       id: 'workspace',
-      label: 'Hermes Workspace',
+      label: 'Bingus Labs',
       installKind,
       version,
       path: repoPath,
@@ -310,7 +310,7 @@ export function readWorkspaceUpdateStatus(
   if (!gitRepo) {
     return {
       id: 'workspace',
-      label: 'Hermes Workspace',
+      label: 'Bingus Labs',
       installKind: 'unknown',
       version,
       path: repoPath,
@@ -350,7 +350,7 @@ export function readWorkspaceUpdateStatus(
 
   return {
     id: 'workspace',
-    label: 'Hermes Workspace',
+    label: 'Bingus Labs',
     installKind: 'git',
     version,
     path: repoPath,
@@ -414,7 +414,7 @@ export function readAgentUpdateStatus(): ProductUpdateStatus {
   if (!repoPath) {
     return {
       id: 'agent',
-      label: 'Hermes Agent',
+      label: 'Oracle Bingus',
       installKind: 'unknown',
       version,
       path,
@@ -426,7 +426,7 @@ export function readAgentUpdateStatus(): ProductUpdateStatus {
       canUpdate: false,
       state: 'unsupported',
       reason:
-        'Hermes Agent git checkout was not found. Bundled desktop installs will update through the app updater.',
+        'Oracle Bingus git checkout was not found. Bundled desktop installs will update through the app updater.',
       updateMode: 'manual',
     }
   }
@@ -452,7 +452,7 @@ export function readAgentUpdateStatus(): ProductUpdateStatus {
 
   return {
     id: 'agent',
-    label: 'Hermes Agent',
+    label: 'Oracle Bingus',
     installKind: 'git',
     version,
     path,
@@ -472,13 +472,13 @@ export function readAgentUpdateStatus(): ProductUpdateStatus {
             ? 'blocked'
             : 'current',
     reason: !repoMatches
-      ? 'Hermes Agent origin remote does not look like hermes-agent.'
+      ? 'Oracle Bingus origin remote does not look like hermes-agent.'
       : dirty
-        ? 'Hermes Agent checkout has local changes. Commit, stash, or remove the listed files before updating.'
+        ? 'Oracle Bingus checkout has local changes. Commit, stash, or remove the listed files before updating.'
         : updateAvailable && !canSync
-          ? 'Hermes Agent update could not verify the remote branch ref.'
+          ? 'Oracle Bingus update could not verify the remote branch ref.'
           : updateAvailable && !ff
-            ? 'Hermes Agent branch diverged from origin. One-click update will realign to the remote branch.'
+            ? 'Oracle Bingus branch diverged from origin. One-click update will realign to the remote branch.'
             : null,
     blockingFiles: dirty ? listDirtyFiles(repoPath) : undefined,
     updateMode: 'hermes-update',
@@ -574,7 +574,7 @@ export function applyWorkspaceUpdate(): ApplyUpdateResult {
   const releaseNotes = [
     {
       product: 'workspace' as const,
-      label: 'Hermes Workspace',
+      label: 'Bingus Labs',
       from: before.currentHead,
       to: after.currentHead,
       commits: readCommits(
@@ -605,7 +605,7 @@ export function applyAgentUpdate(): ApplyUpdateResult {
       restartRequired: false,
       status: before,
       releaseNotes: [],
-      error: before.reason || 'Hermes Agent update is not available.',
+      error: before.reason || 'Oracle Bingus update is not available.',
     }
   }
 
@@ -635,7 +635,7 @@ export function applyAgentUpdate(): ApplyUpdateResult {
   const releaseNotes = [
     {
       product: 'agent' as const,
-      label: 'Hermes Agent',
+      label: 'Oracle Bingus',
       from: before.currentHead,
       to: after.currentHead,
       commits: readCommits(

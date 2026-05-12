@@ -384,7 +384,7 @@ function HermesContent() {
   if (!configAvailable) {
     return (
       <BackendUnavailableState
-        feature="Hermes Agent Settings"
+        feature="Oracle Bingus Settings"
         description={getUnavailableReason('config')}
       />
     )
@@ -999,7 +999,7 @@ function AppearanceContent() {
       <div className={SETTINGS_CARD_CLASS}>
         <Row
           label="System metrics footer"
-          description="Show a persistent footer with CPU, RAM, disk, and Hermes Agent status."
+          description="Show a persistent footer with CPU, RAM, disk, and Oracle Bingus status."
         >
           <Switch
             checked={settings.showSystemMetricsFooter}
@@ -1250,7 +1250,7 @@ function _LoaderContent() {
   const { settings: cs, updateSettings: updateCS } = useChatSettingsStore()
   const styles: Array<{ value: LoaderStyle; label: string }> = [
     { value: 'dots', label: 'Dots' },
-    { value: 'braille-claude', label: 'Hermes' },
+    { value: 'braille-claude', label: 'Bingus' },
     { value: 'braille-orbit', label: 'Orbit' },
     { value: 'braille-breathe', label: 'Breathe' },
     { value: 'braille-pulse', label: 'Pulse' },
@@ -1490,11 +1490,11 @@ function _AdvancedContent() {
     <div className="space-y-4">
       <SectionHeader
         title="Advanced"
-        description="Hermes Agent endpoint and connectivity."
+        description="Oracle Bingus endpoint and connectivity."
       />
       <div className={SETTINGS_CARD_CLASS}>
         <Row
-          label="Hermes Agent URL"
+          label="Oracle Bingus URL"
           description="Used for API requests from Studio"
         >
           <div className="w-full max-w-sm">
@@ -1504,7 +1504,7 @@ function _AdvancedContent() {
               value={settings.claudeUrl}
               onChange={(e) => validateAndUpdateUrl(e.target.value)}
               className="h-8 w-full rounded-lg border-primary-200 text-sm"
-              aria-label="Hermes Agent URL"
+              aria-label="Oracle Bingus URL"
               aria-invalid={!!urlError}
               aria-describedby={urlError ? urlErrorId : undefined}
             />
@@ -2144,7 +2144,7 @@ export function SettingsDialog({
                 Settings
               </DialogTitle>
               <DialogDescription className="sr-only">
-                Configure Hermes Workspace
+                Configure Bingus Labs
               </DialogDescription>
             </div>
             <DialogClose
