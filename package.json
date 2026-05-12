@@ -1,7 +1,7 @@
 {
-  "name": "hermes-workspace",
+  "name": "oracle-bingus-labs",
   "version": "2.3.0",
-  "description": "Desktop workspace for Hermes Agent — chat, orchestration, and multi-agent coding pipelines",
+  "description": "Bingus Labs — the Oracle Bingus workspace.",
   "author": "Eric (https://github.com/outsourc-e)",
   "license": "MIT",
   "private": true,

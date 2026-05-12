@@ -1,7 +1,7 @@
 module.exports = {
   appId: 'com.hermesworkspace.app',
-  productName: 'hermes-workspace',
-  copyright: 'Copyright © 2026 hermes-workspace',
+  productName: 'bingus-labs',
+  copyright: 'Copyright © 2026 Bingus Labs',
   icon: 'assets/icon.png',
   directories: {
     output: 'release',
@@ -30,7 +30,7 @@ module.exports = {
     gatekeeperAssess: false,
   },
   dmg: {
-    title: 'Hermes Workspace',
+    title: 'Bingus Labs',
     iconSize: 80,
     contents: [
       { x: 130, y: 220 },

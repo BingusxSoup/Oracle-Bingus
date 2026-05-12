@@ -1,11 +1,11 @@
 {
-  "name": "Hermes Workspace",
-  "short_name": "Hermes",
-  "description": "Native web control surface for Hermes Agent",
+  "name": "Bingus Labs",
+  "short_name": "Bingus",
+  "description": "Native web control surface for Oracle Bingus",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A0E1A",
-  "theme_color": "#6366F1",
+  "background_color": "#05051A",
+  "theme_color": "#FF00FF",
   "categories": ["productivity", "utilities"],
   "icons": [
     {

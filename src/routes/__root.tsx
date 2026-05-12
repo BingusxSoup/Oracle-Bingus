@@ -152,7 +152,7 @@ export const Route = createRootRoute({
       // PWA meta tags
       {
         name: 'theme-color',
-        content: '#0A0E1A',
+        content: '#FF00FF',
       },
       {
         name: 'apple-mobile-web-app-capable',
