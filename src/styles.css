@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:opsz,wght@8..120,400..800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:opsz,wght@8..120,400..800&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap');
 @import 'tailwindcss';
 
 /* Tailwind v4 — enable dark: variant on .dark class (set by __root.tsx) */
@@ -1608,6 +1608,14 @@ code {
   background: #05051A;
   color: #39FF14;
   font-family: 'VT323', monospace;
+}
+
+[data-theme='oracle-bingus'] pre,
+[data-theme='oracle-bingus'] code,
+[data-theme='oracle-bingus'] kbd,
+[data-theme='oracle-bingus'] samp,
+[data-theme='oracle-bingus'] .font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
 }
 
 /* CRT scanline overlay — only active when oracle-bingus is selected */
