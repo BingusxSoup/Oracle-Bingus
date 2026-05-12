@@ -1,4 +1,4 @@
-# Contributing to Hermes Workspace
+# Contributing to Bingus Labs
 
 Thanks for your interest in contributing! Here's how to get started.
 
@@ -11,7 +11,7 @@ Thanks for your interest in contributing! Here's how to get started.
    cp .env.example .env
    # Edit .env — set HERMES_API_URL (default: http://127.0.0.1:8642)
    ```
-4. Start [Hermes Agent](https://github.com/NousResearch/hermes-agent) API server
+4. Start [Oracle Bingus](https://github.com/NousResearch/hermes-agent) API server
 5. Run dev server: `pnpm dev`
 6. Make your changes on a feature branch
 7. Open a PR against `main`
@@ -39,7 +39,7 @@ pnpm build
 
 See `.env.example` for all options. Key ones:
 
-- `HERMES_API_URL` — Hermes Agent gateway backend (default: `http://127.0.0.1:8642`)
+- `HERMES_API_URL` — Oracle Bingus gateway backend (default: `http://127.0.0.1:8642`)
 - `CLAUDE_PASSWORD` — Optional password protection for the web UI
 - `CLAUDE_ALLOWED_HOSTS` — Comma-separated hostnames for non-localhost access
 

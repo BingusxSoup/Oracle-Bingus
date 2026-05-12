@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="./public/claude-avatar.webp" alt="Hermes Workspace" width="80" style="border-radius: 16px" />
+<img src="./public/claude-avatar.webp" alt="Bingus Labs" width="80" style="border-radius: 16px" />
 <!-- avatar filename retained for cache stability — do not rename without coordinated cache-bust -->
 
-# Hermes Workspace
+# Bingus Labs
 
 **Your AI agent's command center — chat, files, memory, skills, and terminal in one place.**
 
@@ -16,7 +16,7 @@
 
 > **v2 — zero-fork.** Clone, don't fork. Runs on vanilla [`NousResearch/hermes-agent`](https://github.com/NousResearch/hermes-agent) installed via Nous's own installer. Chat, sessions, memory, skills, jobs, MCP, terminal, dashboard, Agent View, and Operations are all in vanilla parity. **Conductor** currently requires an additional dashboard plugin not in upstream yet — the UI shows a clear placeholder when that endpoint isn't available ([#262](https://github.com/outsourc-e/hermes-workspace/issues/262)). Everything else works with zero patches.
 
-![Hermes Workspace](./docs/screenshots/splash.png)
+![Bingus Labs](./docs/screenshots/splash.png)
 
 </div>
 
@@ -24,7 +24,7 @@
 
 ## Swarm Mode
 
-Hermes Agent Swarm turns the workspace into a live control plane: unlimited Hermes Agents, 1 orchestrator, 0 humans manually dispatching.
+Oracle Bingus Swarm turns the workspace into a live control plane: unlimited Oracle Bingus agents, 1 orchestrator, 0 humans manually dispatching.
 Persistent tmux workers keep context across tasks, rotate safely, and report proof-bearing checkpoints.
 Role-based dispatch routes builders, reviewers, docs, research, ops, triage, QA, and lab lanes without turning Eric into the task router.
 A byte-verified review gate protects release branches before PRs ship.
@@ -33,7 +33,7 @@ Autonomous PR/issue lanes, lab experiments, and the repair playbook keep the mac
 Start here: [docs/swarm/](./docs/swarm/)
 
 - **Orchestrator Chat** — ask the control plane for one task, a decomposed mission, or a full broadcast.
-- **Multi-Agent Control Plane** — see persistent Hermes Agents, roles, state, runtime, and routing wires in one surface.
+- **Multi-Agent Control Plane** — see persistent Oracle Bingus agents, roles, state, runtime, and routing wires in one surface.
 - **Kanban TaskBoard** — plan backlog, ready, running, review, blocked, and done lanes without leaving the workspace.
 - **Reports + Inbox** — review checkpoints, blockers, handoffs, and ready-for-human decisions.
 - **TUI View built in** — attach to tmux-backed workers or fall back to a live shell/log stream.
@@ -50,7 +50,7 @@ Start here: [docs/swarm/](./docs/swarm/)
 - 🎮 **Operations** — Multi-agent dashboard with profile presets (Sage/Trader/Builder/Scribe/Ops) and 'Needs setup' detection
 - 📡 **Conductor** — Mission dispatch + decomposition (requires upstream dashboard plugin, see [#262](https://github.com/outsourc-e/hermes-workspace/issues/262))
 - 👥 **Agent View** — Live agent panel in chat with avatar, queue, history, usage meter
-- 🐝 **Swarm Mode** — Persistent tmux-backed Hermes Agent workers with role-based dispatch
+- 🐝 **Swarm Mode** — Persistent tmux-backed Oracle Bingus workers with role-based dispatch
 - 🗄️ **Dashboard** — Aggregated overview: sessions, model mix, cost ledger, attention card, ops strip
 - 🎨 **Themes** — Hermes, Nous, Bronze, Slate, Mono (light + dark)
 - 🔒 **Security** — Auth middleware on every route, CSP, path-traversal guard, fail-closed remote bind
@@ -87,7 +87,7 @@ Three paths — pick the one that matches you:
 |---|---|---|
 | **🐳 [Docker Compose](#-docker-quickstart)** | Self-hosters, home labs, "give me a compose gig" | ~2 min |
 | **🌐 One-line install** | Local dev on macOS/Linux | ~3 min |
-| **🔌 Attach to existing `hermes-agent`** | You already run Hermes Agent | ~1 min |
+| **🔌 Attach to existing `hermes-agent`** | You already run Oracle Bingus | ~1 min |
 
 ### One-line install
 
@@ -116,7 +116,7 @@ cd hermes-workspace
 pnpm install
 cp .env.example .env
 
-# Point at your existing Hermes Agent services.
+# Point at your existing Oracle Bingus services.
 echo 'HERMES_API_URL=http://127.0.0.1:8642' >> .env
 # Zero-fork installs also need the separate dashboard API for config/sessions/skills/jobs.
 echo 'HERMES_DASHBOARD_URL=http://127.0.0.1:9119' >> .env
@@ -163,22 +163,22 @@ Then restart the gateway, dashboard, and workspace. Hit the workspace from the r
 
 ### Manual install
 
-Hermes Workspace works with any OpenAI-compatible backend. If your backend also exposes Hermes Agent gateway APIs, enhanced features like sessions, memory, skills, and jobs unlock automatically.
+Bingus Labs works with any OpenAI-compatible backend. If your backend also exposes Oracle Bingus gateway APIs, enhanced features like sessions, memory, skills, and jobs unlock automatically.
 
 #### Prerequisites
 
 - **Node.js 22+** — [nodejs.org](https://nodejs.org/)
 - **An OpenAI-compatible backend** — local, self-hosted, or remote
-- **Optional:** Python 3.11+ if you want to run a Hermes Agent gateway locally
+- **Optional:** Python 3.11+ if you want to run a Oracle Bingus gateway locally
 
 #### Step 1: Start your backend
 
-Point Hermes Workspace at any backend that supports:
+Point Bingus Labs at any backend that supports:
 
 - `POST /v1/chat/completions`
 - `GET /v1/models` recommended
 
-Example Hermes Agent gateway setup (from scratch):
+Example Oracle Bingus gateway setup (from scratch):
 
 ```bash
 # Install hermes-agent via Nous's official installer
@@ -191,7 +191,7 @@ hermes gateway run
 
 Our one-liner installer (below) does both steps automatically. If you're using another OpenAI-compatible server, just note its base URL.
 
-### Step 2: Install & Run Hermes Workspace
+### Step 2: Install & Run Bingus Labs
 
 ```bash
 # In a new terminal
@@ -203,7 +203,7 @@ printf '\nHERMES_API_URL=http://127.0.0.1:8642\n' >> .env
 pnpm dev                   # Starts on http://localhost:3000
 ```
 
-> **Verify:** Open `http://localhost:3000` and complete the onboarding flow. First connect the backend, then verify chat works. If your gateway exposes Hermes Agent APIs, advanced features appear automatically.
+> **Verify:** Open `http://localhost:3000` and complete the onboarding flow. First connect the backend, then verify chat works. If your gateway exposes Oracle Bingus APIs, advanced features appear automatically.
 
 #### Environment Variables
 
@@ -211,7 +211,7 @@ pnpm dev                   # Starts on http://localhost:3000
 # OpenAI-compatible backend URL
 HERMES_API_URL=http://127.0.0.1:8642
 
-# Optional: provider keys the Hermes Agent gateway can read at runtime.
+# Optional: provider keys the Oracle Bingus gateway can read at runtime.
 # You only need the key(s) for whichever provider(s) you actually use.
 # ANTHROPIC_API_KEY=***         # Anthropic
 # OPENAI_API_KEY=sk-...                # GPT / o-series
@@ -227,11 +227,11 @@ HERMES_API_URL=http://127.0.0.1:8642
 
 ## 🧠 Local Models (Ollama, Atomic Chat, LM Studio, vLLM)
 
-Hermes Workspace supports two modes with local models:
+Bingus Labs supports two modes with local models:
 
 ### Portable Mode (Easiest)
 
-Point the workspace directly at your local server — no Hermes Agent gateway needed.
+Point the workspace directly at your local server — no Oracle Bingus gateway needed.
 
 ### Atomic Chat
 
@@ -240,7 +240,7 @@ Point the workspace directly at your local server — no Hermes Agent gateway ne
 HERMES_API_URL=http://127.0.0.1:1337/v1 pnpm dev
 ```
 
-Download [Atomic Chat](https://atomic.chat/), launch the desktop app, and make sure a model is loaded before starting Hermes Workspace.
+Download [Atomic Chat](https://atomic.chat/), launch the desktop app, and make sure a model is loaded before starting Bingus Labs.
 
 ### Ollama
 
@@ -256,7 +256,7 @@ Chat works immediately. Sessions, memory, and skills show "Not Available" — th
 
 ### Enhanced Mode (Full Features)
 
-Route through the Hermes Agent gateway for sessions, memory, skills, jobs, and tools.
+Route through the Oracle Bingus gateway for sessions, memory, skills, jobs, and tools.
 
 Here are two explicit `~/.hermes/config.yaml` examples for the local providers we support directly in the workspace:
 
@@ -312,11 +312,11 @@ All workspace features unlock automatically once both services are reachable —
 
 ## 🤝 Pair an Agent with the Workspace
 
-Workspace is the UI. **Hermes Agent** is the brain. They talk over two HTTP services on localhost (or any reachable network).
+Workspace is the UI. **Oracle Bingus** is the brain. They talk over two HTTP services on localhost (or any reachable network).
 
 ```
 ┌───────────────┐         :8642 gateway          ┌────────────────┐
-│   Workspace    │ ─────────────────────▶ │  Hermes Agent  │
+│   Workspace    │ ─────────────────────▶ │  Oracle Bingus  │
 │   :3000 (UI)   │ ◀───────────────────── │  CLI / brain   │
 └───────────────┘         :9119 dashboard        └────────────────┘
 ```
@@ -382,7 +382,7 @@ If you've already started the workspace, change either URL from **Settings → C
 
 [![Open in GitHub Codespaces](https://img.shields.io/badge/GitHub%20Codespaces-Open-181717?logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=outsourc-e/hermes-workspace)
 
-The Docker setup runs both the **Hermes Agent gateway** and **Hermes Workspace** together.
+The Docker setup runs both the **Oracle Bingus gateway** and **Bingus Labs** together.
 
 ### Prerequisites
 
@@ -431,7 +431,7 @@ legacy-named `claude-data` Docker volume, so containers can be recreated without
 
 Open `http://localhost:3000` and complete the onboarding.
 
-> **Verify:** Check the Docker logs for `[gateway] Connected to Hermes Agent` — this confirms the workspace successfully connected to the agent.
+> **Verify:** Check the Docker logs for `[gateway] Connected to Oracle Bingus` — this confirms the workspace successfully connected to the agent.
 
 ### Building from source
 
@@ -444,14 +444,14 @@ docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 
 The base `docker-compose.yml` stays untouched — the overlay adds a `build:`
 block for the `hermes-workspace` service so the local repo is compiled
-instead of pulled. The Hermes Agent service still uses the canonical
+instead of pulled. The Oracle Bingus service still uses the canonical
 `nousresearch/hermes-agent:latest` image; if you need a custom agent
 build, tag it locally and override `image:` in your own
 `compose.override.yml`.
 
 ### Using a Pre-Built Image (Coolify / Easypanel / Dokploy / Unraid)
 
-Deploying Hermes Workspace to a PaaS or home-lab stack? Pull the image
+Deploying Bingus Labs to a PaaS or home-lab stack? Pull the image
 directly from GitHub Container Registry:
 
 ```
@@ -485,36 +485,36 @@ does by default) or an existing gateway on another host.
 
 ## 📱 Install as App (Recommended)
 
-Hermes Workspace is a **Progressive Web App (PWA)** — install it for the full native app experience with no browser chrome, keyboard shortcuts, and offline support.
+Bingus Labs is a **Progressive Web App (PWA)** — install it for the full native app experience with no browser chrome, keyboard shortcuts, and offline support.
 
 ### 🖥️ Desktop (macOS / Windows / Linux)
 
-1. Open Hermes Workspace in **Chrome** or **Edge** at `http://localhost:3000`
+1. Open Bingus Labs in **Chrome** or **Edge** at `http://localhost:3000`
 2. Click the **install icon** (⊕) in the address bar
-3. Click **Install** — Hermes Workspace opens as a standalone desktop app
+3. Click **Install** — Bingus Labs opens as a standalone desktop app
 4. Pin to Dock / Taskbar for quick access
 
 > **macOS users:** After installing, you can also add it to your Launchpad.
 
 ### 📱 iPhone / iPad (iOS Safari)
 
-1. Open Hermes Workspace in **Safari** on your iPhone
+1. Open Bingus Labs in **Safari** on your iPhone
 2. Tap the **Share** button (□↑)
 3. Scroll down and tap **"Add to Home Screen"**
-4. Tap **Add** — the Hermes Workspace icon appears on your home screen
+4. Tap **Add** — the Bingus Labs icon appears on your home screen
 5. Launch from home screen for the full native app experience
 
 ### 🤖 Android
 
-1. Open Hermes Workspace in **Chrome** on your Android device
+1. Open Bingus Labs in **Chrome** on your Android device
 2. Tap the **three-dot menu** (⋮) → **"Add to Home screen"**
-3. Tap **Add** — Hermes Workspace is now a native-feeling app on your device
+3. Tap **Add** — Bingus Labs is now a native-feeling app on your device
 
 ---
 
 ## 📡 Mobile Access via Tailscale
 
-Access Hermes Workspace from anywhere on your devices — no port forwarding, no VPN complexity.
+Access Bingus Labs from anywhere on your devices — no port forwarding, no VPN complexity.
 
 ### Setup
 
@@ -531,7 +531,7 @@ Access Hermes Workspace from anywhere on your devices — no port forwarding, no
    # Example output: 100.x.x.x
    ```
 
-4. **Open Hermes Workspace on your phone:**
+4. **Open Bingus Labs on your phone:**
 
    ```
    http://100.x.x.x:3000
@@ -554,7 +554,7 @@ The desktop app will offer:
 - Auto-launch on startup
 - Deep OS integration (macOS menu bar, Windows taskbar)
 
-**In the meantime:** Install Hermes Workspace as a PWA (see above) for a near-native desktop experience — it works great.
+**In the meantime:** Install Bingus Labs as a PWA (see above) for a near-native desktop experience — it works great.
 
 ---
 
@@ -562,7 +562,7 @@ The desktop app will offer:
 
 > **Status: Coming Soon**
 
-A fully managed cloud version of Hermes Workspace is in development:
+A fully managed cloud version of Bingus Labs is in development:
 
 - **One-click deploy** — No self-hosting required
 - **Multi-device sync** — Access your agents from any device
@@ -599,7 +599,7 @@ Key safeguards — most are on by default, the env vars below are for remote / D
 - `COOKIE_SECURE=0` — disable the `Secure` flag for plain-HTTP LAN deployments (`HOST=0.0.0.0` without HTTPS); without this, browsers silently drop session cookies and login fails (#149)
 - `TRUST_PROXY=1` — trust `x-forwarded-for` / `x-real-ip` (only set behind a sanitizing reverse proxy)
 - `HERMES_DASHBOARD_TOKEN` — explicit bearer for dashboard API (preferred over the legacy HTML-scrape fallback)
-- `HERMES_API_TOKEN` — bearer for the Hermes Agent gateway when started with `API_SERVER_KEY` (legacy `CLAUDE_API_TOKEN` still honored)
+- `HERMES_API_TOKEN` — bearer for the Oracle Bingus gateway when started with `API_SERVER_KEY` (legacy `CLAUDE_API_TOKEN` still honored)
 - `HERMES_ALLOW_INSECURE_REMOTE=1` — bypass the fail-closed guard (not recommended)
 
 See `.env.example` for the full list. Credits to [@kiosvantra](https://github.com/kiosvantra) for the security audit surfacing #121–#125.
@@ -614,7 +614,7 @@ The workspace auto-detects your gateway's capabilities on startup. Check your te
 
 ```
 [gateway] http://127.0.0.1:8642 available: health, models; missing: sessions, skills, memory, config, jobs
-[gateway] Missing Hermes Agent APIs detected. Update hermes-agent to the latest version.
+[gateway] Missing Oracle Bingus APIs detected. Update hermes-agent to the latest version.
 ```
 
 **Fix:** Upgrade to the latest stock `hermes-agent`, which ships the extended endpoints:
@@ -628,7 +628,7 @@ hermes gateway run
 
 ### "Connection refused" or workspace hangs on load
 
-Your Hermes Agent gateway isn't running. Start it:
+Your Oracle Bingus gateway isn't running. Start it:
 
 ```bash
 hermes gateway run
@@ -753,7 +753,7 @@ The Docker setup runs both automatically — no action needed if using `docker c
 
 ## 💛 Support the Project
 
-Hermes Workspace is free and open source. If it's saving you time and powering your workflow, consider supporting development:
+Bingus Labs is free and open source. If it's saving you time and powering your workflow, consider supporting development:
 
 **ETH:** `0xB332D4C60f6FBd94913e3Fd40d77e3FE901FAe22`
 
@@ -780,5 +780,5 @@ MIT — see [LICENSE](LICENSE) for details.
 ---
 
 <div align="center">
-  <sub>Built with ⚡ by <a href="https://github.com/outsourc-e">@outsourc-e</a> and the Hermes Workspace community</sub>
+  <sub>Built with ⚡ by <a href="https://github.com/outsourc-e">@outsourc-e</a> and the Bingus Labs community</sub>
 </div>

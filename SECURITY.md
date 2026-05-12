@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Hermes Workspace, please report it responsibly.
+If you discover a security vulnerability in Bingus Labs, please report it responsibly.
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
@@ -12,7 +12,7 @@ We will acknowledge your report within 48 hours and aim to provide a fix within 
 
 ## Scope
 
-- Hermes Workspace web application code
+- Bingus Labs web application code
 - API routes and Claude communication
 - Authentication and session management
 - Client-side data handling and rendering
@@ -21,7 +21,7 @@ We will acknowledge your report within 48 hours and aim to provide a fix within 
 
 ## Out of Scope
 
-- Hermes Agent itself (report to the Hermes Agent project)
+- Oracle Bingus itself (report to the Oracle Bingus project)
 - Third-party dependencies (report to the respective maintainer)
 - Social engineering attacks
 

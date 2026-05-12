@@ -1,6 +1,6 @@
 # Agent Pairing Guide — Workspace ↔ Claude Gateway
 
-> **Audience:** AI agents helping users set up Hermes Workspace.
+> **Audience:** AI agents helping users set up Bingus Labs.
 > Run these steps in order. Each step has a verification command — don't
 > skip to the next until the check passes.
 
@@ -8,7 +8,7 @@
 
 ```
 ┌─────────────────┐       HTTP :8642        ┌──────────────────┐
-│  Claude Gateway  │◄──────────────────────►│ Hermes Workspace │
+│  Claude Gateway  │◄──────────────────────►│ Bingus Labs │
 │  (Python, FastAPI)│  /health, /v1/chat,   │  (Node, Vite)     │
 │  hermes gateway   │  /api/sessions, etc.  │  pnpm dev         │
 │  run              │                       │  port 3000        │
@@ -26,7 +26,7 @@ If `curl http://127.0.0.1:8642/health` returns JSON, they can pair.
 claude --version
 ```
 
-**Pass:** prints `Hermes Agent vX.Y.Z`.
+**Pass:** prints `Oracle Bingus vX.Y.Z`.
 **Fail:** `command not found`.
 
 ### Fix (if hermes-agent not installed)
